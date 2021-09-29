@@ -10,7 +10,7 @@
 
 <!-- Bootstrap core CSS -->
 
-<link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
 
 <!-- Custom styles for this template -->
 
