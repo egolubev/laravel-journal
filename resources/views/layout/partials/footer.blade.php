@@ -1,17 +1,14 @@
 <footer class="text-muted">
-
     <div class="container">
-
-        <p class="float-right">
-
-            <a href="#">Back to top</a>
-
-        </p>
-
-        <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-
-        <p>New to Bootstrap? <a href="../../..">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>
-
+        <div class="row">
+            <div class="col-md-4">
+                <h3 class="font-weight-bold">Тредиум</h3>
+                <p>© 2020-2021 Все права защищены</p>
+            </div>
+            <div class="col-md-8">
+                <p>Блог</p>
+                <p>Как перестать прокрастинировать и начать жить</p>
+            </div>
+        </div>
     </div>
-
 </footer>
