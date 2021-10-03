@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $articles = \App\Models\Articles::all();
-
     return view('mainpage', [
         'articles' => $articles
     ]);
