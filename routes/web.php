@@ -15,3 +15,7 @@ use App\Http\Controllers\ArticlesController;
 */
 
 Route::get('/', [ArticlesController::class, 'index']);
+
+Route::get('/articles', [ArticlesController::class, 'catalog']);
+
+Route::get('/articles/{slug}', [ArticlesController::class, 'view']);
