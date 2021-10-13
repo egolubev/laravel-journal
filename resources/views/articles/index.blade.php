@@ -6,9 +6,9 @@
     <div class="container">
         <div class="row">
             @foreach ($articles as $article)
-                <div class="col-md-4">
+                <div class="col-md-4 d-flex">
                     <div class="card mb-4">
-                        <img class="card-img-top" src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+                        <img class="card-img-top" src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Картинка" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">{{ $article->name }}</h5>
                             <p class="card-text">{{ $article->preview }}</p>

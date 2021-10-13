@@ -8,10 +8,10 @@
         </div>
         <div class="navbar-collapse collapse order-2 dual-collapse2">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
+                <li class="nav-item {{ request()->is('/') ? 'active' : '' }}">
                     <a class="nav-link" href="/">На главную</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {{ request()->is('articles*') ? 'active' : '' }}">
                     <a class="nav-link" href="/articles">Каталог статей</a>
                 </li>
             </ul>
