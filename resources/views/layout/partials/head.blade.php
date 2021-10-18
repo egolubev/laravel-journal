@@ -6,4 +6,4 @@
 <!-- Bootstrap core CSS -->
 <link rel="stylesheet" href="/css/bootstrap.min.css">
 <!-- Custom styles for this template -->
-<link rel="stylesheet" href="/css/album.css">
+<link rel="stylesheet" href="/css/journal.css">

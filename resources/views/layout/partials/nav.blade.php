@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light bg-light">
+<nav class="navbar navbar-expand-md navbar-light bg-grey">
     <div class="container">
         <div class="order-0">
             <a class="navbar-brand" href="#">Трендиум</a>

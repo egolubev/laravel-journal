@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="py-5 bg-light">
+<div class="py-5 bg-grey">
     <div class="container">
         <div class="row">
             @foreach ($articles as $article)
