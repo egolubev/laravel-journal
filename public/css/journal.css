@@ -71,3 +71,9 @@ footer p {
     background-color: #6c757d;
     border-color: #6c757d;
 }
+
+a.card,
+a.card:hover {
+    color: #212529;
+    text-decoration: none;
+}

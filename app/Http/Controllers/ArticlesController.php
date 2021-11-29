@@ -36,13 +36,13 @@ class ArticlesController extends Controller
 
     /**
      * Детализированный просмотр статьи
-     * @param $slug
+     * @param $id - ид статьи
      * @return \Illuminate\View\View
      */
-    public function view($slug)
+    public function view($id = 0)
     {
         return view('articles/view', [
-            'article' => DB::table('articles')->first()
+            'article' => DB::table('articles')->where('id', $id)->first()
         ]);
     }
 }

@@ -18,4 +18,4 @@ Route::get('/', [ArticlesController::class, 'index']);
 
 Route::get('/articles', [ArticlesController::class, 'catalog']);
 
-Route::get('/articles/{slug}', [ArticlesController::class, 'view']);
+Route::get('/articles/{id}', [ArticlesController::class, 'view']);
