@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +14,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         \App\Models\Articles::factory(20)->create();
+        Model::unguard();
+
+        $this->call([
+            ArticlesTableSeeder::class,
+            TagsTableSeeder::class,
+            ArticlesTagsTableSeeder::class,
+        ]);
+
+        Model::reguard();
     }
 }

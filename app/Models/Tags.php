@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Articles extends Model
+class Tags extends Model
 {
     use HasFactory;
 
-    public function tags()
+    public function articles()
     {
-        return $this->belongsToMany('App\Models\Tags');
+        return $this->belongsToMany('App\Models\Articles');
     }
 }
