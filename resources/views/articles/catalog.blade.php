@@ -6,12 +6,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-3">
-                    <span class="badge badge-pill badge-secondary">Новости</span>
-                    <span class="badge badge-pill badge-secondary">Наука</span>
-                    <span class="badge badge-pill badge-secondary">Цифровизация</span>
-                    <span class="badge badge-pill badge-secondary">Информатизация</span>
-                    <span class="badge badge-pill badge-secondary">Образование</span>
-                    <span class="badge badge-pill badge-secondary">Концференция</span>
+                    @foreach ($tags as $tag)
+                        <span class="badge badge-pill badge-secondary">{{ $tag->name }}</span>
+                    @endforeach
                 </div>
                 <div class="col-sm-9">
                     @foreach ($articles as $article)

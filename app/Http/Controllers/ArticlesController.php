@@ -8,6 +8,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Articles;
+use App\Models\Tags;
 use Illuminate\Support\Facades\DB;
 
 class ArticlesController extends Controller
@@ -30,7 +32,8 @@ class ArticlesController extends Controller
     public function catalog()
     {
         return view('articles/catalog', [
-            'articles' => DB::table('articles')->paginate(5)
+            'articles' => DB::table('articles')->paginate(5),
+            'tags' => Tags::all(),
         ]);
     }
 
@@ -42,7 +45,7 @@ class ArticlesController extends Controller
     public function view($id = 0)
     {
         return view('articles/view', [
-            'article' => DB::table('articles')->where('id', $id)->first()
+            'article' => Articles::with('tags')->where('id', $id)->first()
         ]);
     }
 }

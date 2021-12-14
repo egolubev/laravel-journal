@@ -10,9 +10,9 @@
                 <div class="col-sm-7">
                     <h5>{{ $article->name }}</h5>
                     <p>
-                        <span class="badge badge-pill badge-secondary">Новости</span>
-                        <span class="badge badge-pill badge-secondary">Наука</span>
-                        <span class="badge badge-pill badge-secondary">Цифровизация</span>
+                        @foreach ($article->tags as $tag)
+                            <span class="badge badge-pill badge-secondary">{{ $tag->name }}</span>
+                        @endforeach
                     </p>
                     <p>{{ $article->preview }}</p>
                 </div>
