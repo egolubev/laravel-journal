@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-light bg-grey">
     <div class="container">
         <div class="order-0">
-            <a class="navbar-brand" href="#">Трендиум</a>
+            <a class="navbar-brand" href="/">Трендиум</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
                 <span class="navbar-toggler-icon"></span>
             </button>

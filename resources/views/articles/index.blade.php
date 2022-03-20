@@ -9,9 +9,17 @@
                 <div class="col-md-4 d-flex">
                     <a href="{{ url("/articles/{$article->id}") }}" class="card mb-4">
                         <img class="card-img-top" src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Картинка" alt="Card image cap">
-                        <div class="card-body">
+                        <div class="card-body d-flex flex-column">
                             <h5 class="card-title">{{ $article->name }}</h5>
                             <p class="card-text">{{ $article->preview }}</p>
+                            <div class="row mt-auto">
+                                <div class="col-6 col-sm-6 text-left">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <div class="col-6 col-sm-6 text-right">
+                                    <i class="far fa-heart"></i>
+                                </div>
+                            </div>
                         </div>
                     </a>
                 </div>
