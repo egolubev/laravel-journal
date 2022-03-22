@@ -8,8 +8,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Articles;
 use App\Models\Tags;
+use Illuminate\Http\Request;
+use App\Models\Articles;
 use Illuminate\Support\Facades\DB;
 
 class ArticlesController extends Controller
@@ -47,5 +48,22 @@ class ArticlesController extends Controller
         return view('articles/view', [
             'article' => Articles::with('tags')->where('id', $id)->first()
         ]);
+    }
+
+    /**
+     * Добавляем новый голос
+     * @param Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function likeUp(Request $request)
+    {
+        // добавляем новый голос
+        Articles::where('id', $request->get('id'))->increment('cnt_like');
+        // получаем итоговое количество лайков
+        $article = Articles::where('id', $request->get('id'))->first();
+        return response()->json([
+            'message' => 'Like added.',
+            'cnt_like' => $article->cnt_like
+        ], 200);
     }
 }

@@ -7,21 +7,28 @@
         <div class="row">
             @foreach ($articles as $article)
                 <div class="col-md-4 d-flex">
-                    <a href="{{ url("/articles/{$article->id}") }}" class="card mb-4">
-                        <img class="card-img-top" src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Картинка" alt="Card image cap">
+                    <div class="card mb-4">
+                        <a href="{{ url("/articles/{$article->id}") }}">
+                            <img class="card-img-top" src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Картинка" alt="Card image cap">
+                        </a>
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">{{ $article->name }}</h5>
                             <p class="card-text">{{ $article->preview }}</p>
                             <div class="row mt-auto">
                                 <div class="col-6 col-sm-6 text-left">
-                                    <i class="fas fa-eye"></i>
+                                    <button class="btn btn-link">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
                                 </div>
                                 <div class="col-6 col-sm-6 text-right">
-                                    <i class="far fa-heart"></i>
+                                    <button class="btn btn-link like" id="like_{{ $article->id }}">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                    <span id="like_result_{{ $article->id }}">{{ $article->cnt_like }}</span>
                                 </div>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
             @endforeach
         </div>
