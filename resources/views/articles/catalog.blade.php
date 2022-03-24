@@ -12,13 +12,28 @@
                 </div>
                 <div class="col-sm-9">
                     @foreach ($articles as $article)
-                        <a href="#" class="card mb-4">
-                            <img class="card-img-top" src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Картинка" alt="card image">
+                        <div  class="card mb-4">
+                            <a href="{{ url("/articles/{$article->id}") }}">
+                                <img class="card-img-top" src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Картинка" alt="card image">
+                            </a>
                             <div class="card-body">
                                 <h5 class="card-title">{{ $article->name }}</h5>
                                 <p class="card-text">{{ $article->preview }}</p>
+                                <div class="row">
+                                    <div class="col-6 col-sm-6 text-left">
+                                        <button class="btn btn-link">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                    <div class="col-6 col-sm-6 text-right">
+                                        <button class="btn btn-link like" id="like_{{ $article->id }}">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                        <span id="like_result_{{ $article->id }}">{{ $article->cnt_like }}</span>
+                                    </div>
+                                </div>
                             </div>
-                        </a>
+                        </div>
                     @endforeach
                     {{ $articles->links() }}
                 </div>

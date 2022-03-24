@@ -9,6 +9,13 @@
                 </div>
                 <div class="col-sm-7">
                     <h5>{{ $article->name }}</h5>
+                    <button class="btn btn-link">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                    <button class="btn btn-link like" id="like_{{ $article->id }}">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <span id="like_result_{{ $article->id }}">{{ $article->cnt_like }}</span>
                     <p>
                         @foreach ($article->tags as $tag)
                             <span class="badge badge-pill badge-secondary">{{ $tag->name }}</span>
