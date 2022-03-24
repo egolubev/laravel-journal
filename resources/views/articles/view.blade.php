@@ -12,6 +12,7 @@
                     <button class="btn btn-link">
                         <i class="fas fa-eye"></i>
                     </button>
+                    <span>{{ $article->cnt_show }}</span>
                     <button class="btn btn-link like" id="like_{{ $article->id }}">
                         <i class="far fa-heart"></i>
                     </button>

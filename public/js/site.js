@@ -2,7 +2,7 @@ $(function() {
     $('.like').on('click',function() {
         let id = $(this).attr('id').split('_')[1];
         $.ajax({
-            url: '/api/likes',
+            url: '/api/like',
             type: "POST",
             data: {id : id},
             success: function (data) {

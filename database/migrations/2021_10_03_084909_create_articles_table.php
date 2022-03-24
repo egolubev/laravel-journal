@@ -18,6 +18,7 @@ class CreateArticlesTable extends Migration
             $table->string('name');
             $table->string('preview', 1000);
             $table->integer('cnt_like');
+            $table->integer('cnt_show');
             $table->timestamps();
         });
     }

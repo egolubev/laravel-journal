@@ -24,6 +24,7 @@
                                         <button class="btn btn-link">
                                             <i class="fas fa-eye"></i>
                                         </button>
+                                        <span>{{ $article->cnt_show }}</span>
                                     </div>
                                     <div class="col-6 col-sm-6 text-right">
                                         <button class="btn btn-link like" id="like_{{ $article->id }}">

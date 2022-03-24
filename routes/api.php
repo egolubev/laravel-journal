@@ -19,4 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/likes', [ArticlesController::class, 'likeUp']);
+Route::post('/like', [ArticlesController::class, 'likeUp']);
+Route::post('/show', [ArticlesController::class, 'showUp']);

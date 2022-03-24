@@ -24,7 +24,8 @@ class ArticlesFactory extends Factory
         return [
             'name' => $this->faker->name,
             'preview' => $this->faker->text,
-            'cnt_like' => 0
+            'cnt_like' => 0,
+            'cnt_show' => 0
         ];
     }
 }

@@ -66,4 +66,21 @@ class ArticlesController extends Controller
             'cnt_like' => $article->cnt_like
         ], 200);
     }
+
+    /**
+     * Добавляем новый промотр
+     * @param Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function showUp(Request $request)
+    {
+        // добавляем новый голос
+        Articles::where('id', $request->get('id'))->increment('cnt_show');
+        // получаем итоговое количество лайков
+        $article = Articles::where('id', $request->get('id'))->first();
+        return response()->json([
+            'message' => 'Show added.',
+            'cnt_like' => $article->cnt_show
+        ], 200);
+    }
 }
