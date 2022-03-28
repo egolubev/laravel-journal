@@ -9,8 +9,21 @@ $(function() {
                 $('#like_result_' + id).text(data.cnt_like);
             },
             error: function (msg) {
-                alert('Ошибка');
+                alert('Error');
             }
         });
     });
-})
+});
+function showUp(id) {
+    $.ajax({
+        url: '/api/show',
+        type: "POST",
+        data: {id : id},
+        success: function (data) {
+            $('#show_result_' + id).text(data.cnt_show);
+        },
+        error: function (msg) {
+            alert('Error');
+        }
+    });
+}

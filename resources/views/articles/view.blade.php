@@ -12,7 +12,7 @@
                     <button class="btn btn-link">
                         <i class="fas fa-eye"></i>
                     </button>
-                    <span>{{ $article->cnt_show }}</span>
+                    <span id="show_result_{{ $article->id }}">{{ $article->cnt_show }}</span>
                     <button class="btn btn-link like" id="like_{{ $article->id }}">
                         <i class="far fa-heart"></i>
                     </button>
@@ -29,5 +29,17 @@
             </div>
         </div>
     </div>
+
+@endsection
+
+@section('js-for-page')
+
+    <script type="text/javascript">
+        setTimeout(function () {
+            $(document).ready(function(){
+                showUp({{ $article->id }});
+            });
+        }, 5000);
+    </script>
 
 @endsection

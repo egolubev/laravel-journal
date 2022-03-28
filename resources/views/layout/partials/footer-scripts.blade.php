@@ -8,4 +8,4 @@
 <script src="/js/tether.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/holder.js"></script>
-<script src="/js/site.js"></script>
+<script src="/js/site.js?t=1"></script>

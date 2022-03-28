@@ -74,13 +74,13 @@ class ArticlesController extends Controller
      */
     public function showUp(Request $request)
     {
-        // добавляем новый голос
+        // добавляем новый просмотр
         Articles::where('id', $request->get('id'))->increment('cnt_show');
-        // получаем итоговое количество лайков
+        // получаем итоговое количество просмотров
         $article = Articles::where('id', $request->get('id'))->first();
         return response()->json([
             'message' => 'Show added.',
-            'cnt_like' => $article->cnt_show
+            'cnt_show' => $article->cnt_show
         ], 200);
     }
 }
