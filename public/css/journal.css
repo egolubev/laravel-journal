@@ -47,7 +47,7 @@ footer p {
 }
 
 .navbar-collapse .navbar-nav .active a::after {
-    border-bottom: 5px solid lightskyblue;
+    border-bottom: 5px solid #55595C;
     bottom: 0;
     content: " ";
     left: 0;
