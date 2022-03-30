@@ -23,6 +23,32 @@
                         @endforeach
                     </p>
                     <p>{{ $article->preview }}</p>
+                    <hr>
+                    <div id="comment-form">
+                        <input type="hidden" id="article_id" name="article_id" value="{{ $article->id }}">
+                        <div class="form-group">
+                            <div class="col-sm-12 p-0">
+                                <input type="text" id="subject" name="subject" class="form-control" placeholder="Тема сообщения">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12 p-0">
+                                <textarea rows="4" id="body" name="body" class="form-control" placeholder="Сообщение"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-6 p-0 ">
+                                <button id="submit_button" class="btn btn-dark">
+                                     Отправить комментарий
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="comment-msg" style="display: none;">
+                        <div class="alert alert-success" role="alert">
+                            Спасибо! Ваш комментарий успешно отрпавлен.
+                        </div>
+                    </div>
                 </div>
                 <div class="col-sm-3">
                 </div>
@@ -40,6 +66,25 @@
                 showUp({{ $article->id }});
             });
         }, 5000);
+        $(document).ready(function(){
+            $('#submit_button').on('click',function() {
+                let body = $('#body').val();
+                let subject = $('#subject').val();
+                let article_id = $('#article_id').val();
+                $.ajax({
+                    url: '/api/comment',
+                    type: "POST",
+                    data: {body : body, subject: subject, article_id: article_id},
+                    success: function (data) {
+                        $('#comment-msg').show();
+                        $('#comment-form').hide();
+                    },
+                    error: function (msg) {
+                        alert('Error');
+                    }
+                });
+            });
+        });
     </script>
 
 @endsection

@@ -8,10 +8,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tags;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Articles;
-use Illuminate\Support\Facades\DB;
+use App\Models\Tags;
+use App\Models\Comment;
 
 class ArticlesController extends Controller
 {
@@ -81,6 +82,25 @@ class ArticlesController extends Controller
         return response()->json([
             'message' => 'Show added.',
             'cnt_show' => $article->cnt_show
+        ], 200);
+    }
+
+    /**
+     * Добавляем новый комментарий
+     * @param Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function commentUp(Request $request)
+    {
+        // добавляем новый комментарий
+        $comment = new Comment();
+        $comment->body = $request->get('body');
+        $comment->subject = $request->get('subject');
+        $comment->article_id = $request->get('article_id');
+        $comment->save();
+        // формируем ответ (пока без валидации)
+        return response()->json([
+            'message' => 'Comment added.'
         ], 200);
     }
 }
